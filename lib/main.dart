@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
         title: 'Event Countdown',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
+        // darkTheme: AppTheme.darkTheme,
         themeMode: ThemeMode.system,
         initialRoute: AppRoutes.splash,
         onGenerateRoute: AppRoutes.onGenerateRoute,
