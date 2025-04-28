@@ -161,11 +161,7 @@ class _CalendarPageState extends State<CalendarPage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      appBar: AppBar(
-        title: Text(_viewMode == 0 ? 'Weekly view' : 'Monthly view'),
-        backgroundColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-      ),
+
       body: BlocConsumer<EventsCubit, EventsState>(
         listener: (context, state) {
           if (state.status == EventsStatus.success) {

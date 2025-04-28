@@ -206,7 +206,6 @@ class _MonthlyViewPageState extends State<MonthlyViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Monthly View')),
       body: BlocConsumer<EventsCubit, EventsState>(
         listener: (context, state) {
           if (state.status == EventsStatus.success) {

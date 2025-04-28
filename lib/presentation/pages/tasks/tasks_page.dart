@@ -86,7 +86,6 @@ class _TasksPageState extends State<TasksPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
       body: BlocConsumer<EventsCubit, EventsState>(
         listener: (context, state) {
           if (state.status == EventsStatus.success) {
@@ -99,7 +98,7 @@ class _TasksPageState extends State<TasksPage>
           }
 
           return SafeArea(
-            child: Column(children: [_buildHeader(), _buildTasksList()]),
+            child: Column(children: [SizedBox(height: 16), _buildTasksList()]),
           );
         },
       ),
@@ -107,32 +106,6 @@ class _TasksPageState extends State<TasksPage>
         onPressed: _navigateToNewTask,
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add, color: Colors.white),
-      ),
-    );
-  }
-
-  Widget _buildHeader() {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                'Tasks',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-              ),
-              IconButton(
-                icon: const Icon(Icons.calendar_month),
-                onPressed: () {
-                  // Navigate to calendar view
-                },
-              ),
-            ],
-          ),
-        ],
       ),
     );
   }

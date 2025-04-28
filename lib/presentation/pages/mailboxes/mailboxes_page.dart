@@ -105,7 +105,6 @@ class _MailboxesPageState extends State<MailboxesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Mailboxes')),
       body: BlocConsumer<EventsCubit, EventsState>(
         listener: (context, state) {
           if (state.status == EventsStatus.success) {

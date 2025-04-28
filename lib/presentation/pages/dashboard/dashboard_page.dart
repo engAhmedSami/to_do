@@ -110,10 +110,7 @@ class _DashboardPageState extends State<DashboardPage>
       expandedHeight: 180.0,
       floating: true,
       pinned: true,
-      title: const Text(
-        'Dashboard',
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
+
       actions: [
         IconButton(
           icon: const Icon(Icons.refresh),
@@ -134,10 +131,9 @@ class _DashboardPageState extends State<DashboardPage>
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(16, 90, 16, 16),
+            padding: const EdgeInsets.all(16),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   DateFormat('EEEE, d MMMM yyyy').format(DateTime.now()),
@@ -242,7 +238,7 @@ class _DashboardPageState extends State<DashboardPage>
     required IconData icon,
   }) {
     return Container(
-      width: 150,
+      width: 200,
       margin: const EdgeInsets.only(right: 12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
@@ -305,6 +301,7 @@ class _DashboardPageState extends State<DashboardPage>
   }
 
   // Build tab bar
+
   Widget _buildTabBar() {
     return Container(
       margin: const EdgeInsets.all(16),
@@ -320,10 +317,35 @@ class _DashboardPageState extends State<DashboardPage>
         ),
         labelColor: Colors.white,
         unselectedLabelColor: Colors.grey.shade700,
-        tabs: const [
-          Tab(text: 'Daily'),
-          Tab(text: 'Weekly'),
-          Tab(text: 'Monthly'),
+        labelPadding: const EdgeInsets.symmetric(
+          horizontal: 8,
+        ), // Add more horizontal space for tabs
+        tabs: [
+          Tab(
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                vertical: 10,
+                horizontal: 15,
+              ), // Slightly reduce horizontal padding
+              child: const Text('Daily', style: TextStyle(fontSize: 16)),
+            ),
+          ),
+          Tab(
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              child: const Text('Weekly', style: TextStyle(fontSize: 16)),
+            ),
+          ),
+          Tab(
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              child: const Text(
+                'Monthly',
+                style: TextStyle(fontSize: 16),
+                overflow: TextOverflow.visible, // Prevent text truncation
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -95,7 +95,6 @@ class _WeeklyViewPageState extends State<WeeklyViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Weekly View')),
       body: BlocConsumer<EventsCubit, EventsState>(
         listener: (context, state) {
           if (state.status == EventsStatus.success) {
