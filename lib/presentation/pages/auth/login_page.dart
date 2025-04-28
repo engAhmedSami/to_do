@@ -1,6 +1,8 @@
 // lib/presentation/pages/auth/login_page.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../utils/gen/assets.gen.dart';
 import '../../cubits/auth/auth_cubit.dart';
 import '../../cubits/auth/auth_state.dart';
 
@@ -49,20 +51,8 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   // App logo
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    margin: const EdgeInsets.only(bottom: 40),
-                    child: const Icon(
-                      Icons.timer,
-                      size: 60,
-                      color: Colors.white,
-                    ),
-                  ),
+                  Assets.images.logo.svg(width: 150.w),
+                  const SizedBox(height: 32),
 
                   // Title
                   Text(
