@@ -6,6 +6,7 @@ import '../../cubits/auth/auth_state.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+  static String id = "/login";
 
   @override
   State<LoginPage> createState() => _LoginPageState();

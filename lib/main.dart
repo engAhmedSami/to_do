@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'config/routes.dart';
@@ -106,14 +107,16 @@ class _MyAppState extends State<MyApp> {
         //   Add any Task layout specific providers here
         // ],
       ],
-      child: MaterialApp(
-        title: _isOriginalLayout ? 'Event Countdown' : 'Task Manager',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.lightTheme,
-        // darkTheme: AppTheme.darkTheme,
-        themeMode: ThemeMode.system,
-        initialRoute: AppRoutes.splash,
-        onGenerateRoute: AppRoutes.onGenerateRoute,
+      child: ScreenUtilInit(
+        child: MaterialApp(
+          title: _isOriginalLayout ? 'Event Countdown' : 'Task Manager',
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightTheme,
+          // darkTheme: AppTheme.darkTheme,
+          themeMode: ThemeMode.system,
+          initialRoute: AppRoutes.splash,
+          onGenerateRoute: AppRoutes.onGenerateRoute,
+        ),
       ),
     );
   }
